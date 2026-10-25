@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shinobi Wiki | Naruto Universe</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0b12;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #151522;
+    padding: 22px;
+    text-align: center;
+    border-bottom: 3px solid #ff6b35;
+}
+
+header h1 {
+    color: #ff6b35;
+    font-size: 32px;
+}
+
+header p {
+    color: #bbb;
+    margin-top: 8px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background: #101019;
+}
+
+nav button {
+    background: #252536;
+    color: white;
+    border: 1px solid #44445a;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+nav button:hover {
+    background: #ff6b35;
+    color: black;
+}
+
+.hero {
+    padding: 55px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #29152d, #111827, #35180e);
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ddd;
+    margin-bottom: 22px;
+}
+
+.search {
+    display: block;
+    width: min(90%, 500px);
+    margin: auto;
+    padding: 14px;
+    border-radius: 8px;
+    border: 2px solid #ff6b35;
+    background: #171722;
+    color: white;
+    font-size: 16px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    color: #ff885c;
+    font-size: 26px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #171722;
+    border: 1px solid #303044;
+    border-radius: 12px;
+    padding: 22px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff6b35;
+}
+
+.symbol {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #ffb18f;
+}
+
+.card p {
+    color: #c5c5d0;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.tag {
+    display: inline-block;
+    background: #382329;
+    color: #ffad91;
+    padding: 5px 9px;
+    margin-top: 12px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.info-box {
+    background: #171722;
+    border-left: 4px solid #ff6b35;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background: #151522;
+    color: #aaa;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍥 SHINOBI WIKI</h1>
+    <p>Your gateway to the Naruto universe</p>
+</header>
+
+<nav>
+    <button onclick="showSection('characters')">Characters</button>
+    <button onclick="showSection('jutsu')">Jutsu</button>
+    <button onclick="showSection('eyes')">Dōjutsu</button>
+    <button onclick="showSection('ranks')">Rankings</button>
+</nav>
+
+<section class="hero">
+    <h2>THE SHINOBI WORLD</h2>
+    <p>Discover legendary ninja, powerful techniques, and legendary battles.</p>
+
+    <input
+        class="search"
+        id="search"
+        type="text"
+        placeholder="Search Naruto, Sharingan, Rasengan..."
+        oninput="searchCards()"
+    >
+</section>
+
+<main>
+
+<section id="characters">
+    <h2 class="section-title">⚔️ Legendary Characters</h2>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="symbol">🍥</div>
+            <h3>Naruto Uzumaki</h3>
+            <p>The ninja who never gives up. Known for his enormous chakra reserves, Shadow Clone Technique, and Rasengan.</p>
+            <span class="tag">Hidden Leaf</span>
+        </article>
+
+        <article class="card">
+            <div class="symbol">⚡</div>
+            <h3>Sasuke Uchiha</h3>
+            <p>A prodigy of the Uchiha clan who masters powerful lightning techniques and advanced ocular abilities.</p>
+            <span class="tag">Uchiha Clan</span>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🔥</div>
+            <h3>Madara Uchiha</h3>
+            <p>A legendary shinobi famous for his extraordinary combat skills, Susanoo, and powerful Sharingan abilities.</p>
+            <span class="tag">Legendary Shinobi</span>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🌙</div>
+            <h3>Obito Uchiha</h3>
+            <p>A shinobi whose Kamui ability allows him to manipulate space-time in battle.</p>
+            <span class="tag">Space-Time Ninjutsu</span>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🐸</div>
+            <h3>Jiraiya</h3>
+            <p>The legendary Sannin who trained Naruto and mastered Sage Mode.</p>
+            <span class="tag">Toad Sage</span>
+        </article>
+
+        <article class="card">
+            <div class="symbol">👁️</div>
+            <h3>Itachi Uchiha</h3>
+            <p>A highly skilled shinobi known for his genjutsu, intelligence, and Mangekyō Sharingan.</p>
+            <span class="tag">Master Strategist</span>
+        </article>
+
+    </div>
+</section>
+
+<section id="jutsu" class="hidden">
+    <h2 class="section-title">⚡ Famous Jutsu</h2>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="symbol">🌀</div>
+            <h3>Rasengan</h3>
+            <p>A powerful spinning sphere of chakra developed by Minato Namikaze.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🔥</div>
+            <h3>Amaterasu</h3>
+            <p>A Mangekyō Sharingan technique that creates intense black flames.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🛡️</div>
+            <h3>Susanoo</h3>
+            <p>A powerful chakra avatar manifested by users of the Mangekyō Sharingan.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🌪️</div>
+            <h3>Flying Raijin</h3>
+            <p>A space-time technique that lets its user teleport to marked locations.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🌳</div>
+            <h3>Wood Release</h3>
+            <p>A rare kekkei genkai associated with Hashirama Senju.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">☯️</div>
+            <h3>Eight Gates</h3>
+            <p>A dangerous taijutsu technique that removes the body's natural chakra limiters.</p>
+        </article>
+
+    </div>
+</section>
+
+<section id="eyes" class="hidden">
+    <h2 class="section-title">👁️ Dōjutsu — Visual Powers</h2>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="symbol">🔴</div>
+            <h3>Sharingan</h3>
+            <p>An Uchiha dōjutsu known for enhanced perception and powerful genjutsu.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🌀</div>
+            <h3>Rinnegan</h3>
+            <p>A legendary eye associated with extraordinary abilities, including the Six Paths techniques.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">⚪</div>
+            <h3>Byakugan</h3>
+            <p>An eye associated with the Hyūga clan that provides a nearly 360-degree field of vision.</p>
+        </article>
+
+        <article class="card">
+            <div class="symbol">🌌</div>
+            <h3>Rinne Sharingan</h3>
+            <p>A rare eye associated with the Ten-Tails and the Infinite Tsukuyomi.</p>
+        </article>
+
+    </div>
+</section>
+
+<section id="ranks" class="hidden">
+    <h2 class="section-title">🏆 Shinobi Power Rankings</h2>
+
+    <div class="cards">
+
+        <article class="card">
+            <h3>01 — Kaguya Ōtsutsuki</h3>
+            <p>A godlike figure with immense chakra and powerful space-time abilities.</p>
+        </article>
+
+        <article class="card">
+            <h3>02 — Hagoromo Ōtsutsuki</h3>
+            <p>The Sage of Six Paths, famous for his extraordinary powers and role in shinobi history.</p>
+        </article>
+
+        <article class="card">
+            <h3>03 — Naruto Uzumaki</h3>
+            <p>One of the most powerful shinobi of his generation, especially during his Six Paths era.</p>
+        </article>
+
+        <article class="card">
+            <h3>04 — Sasuke Uchiha</h3>
+            <p>A legendary shinobi whose Rinnegan and Sharingan once made him Naruto's equal.</p>
+        </article>
+
+        <article class="card">
+            <h3>05 — Madara Uchiha</h3>
+            <p>One of the most formidable shinobi in history, especially after gaining Six Paths power.</p>
+        </article>
+
+    </div>
+
+    <div class="info-box">
+        <strong>⚠️ Note:</strong> This is a fan-made ranking, not an official ranking.
+        Character strength varies depending on the form, abilities, and version being compared.
+    </div>
+</section>
+
+<div class="info-box">
+    <strong>🍥 Believe it!</strong><br>
+    A shinobi becomes stronger through determination, training, and protecting the people they care about.
+</div>
+
+</main>
+
+<footer>
+    <p>Shinobi Wiki | A Naruto Fan Project</p>
+    <p>Unofficial fan-made website. Naruto belongs to its respective rights holders.</p>
+</footer>
+
+<script>
+function showSection(sectionId) {
+    const sections = ['characters', 'jutsu', 'eyes', 'ranks'];
+
+    sections.forEach(function(id) {
+        document.getElementById(id).classList.add('hidden');
+    });
+
+    document.getElementById(sectionId).classList.remove('hidden');
+
+    document.getElementById('search').value = '';
+    searchCards();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function searchCards() {
+    const query = document.getElementById('search').value.toLowerCase();
+    const visibleSection = document.querySelector('main section:not(.hidden)');
+
+    if (!visibleSection) return;
+
+    visibleSection.querySelectorAll('.card').forEach(function(card) {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>
